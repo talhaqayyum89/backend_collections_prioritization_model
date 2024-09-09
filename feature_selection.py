@@ -1,55 +1,21 @@
 from data_fetching_func import get_redshift_dataframe
-
-import warnings
-import datetime as dt
-
-
-import re
-import string
-import copy
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 import numpy as np
 import pandas as pd
+import category_encoders as ce
+from boruta import BorutaPy
+import warnings
+from sklearn.ensemble import RandomForestClassifier, VotingClassifier
+
 pd.set_option('max_rows', None)
 pd.set_option('max_columns', None)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
-
-
-import matplotlib.pyplot as plt
-from matplotlib.ticker import ScalarFormatter, FormatStrFormatter
 plt.style.use('ggplot')
 %matplotlib inline
-import seaborn as sns
 color = sns.color_palette()
-
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split, StratifiedKFold
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, VotingClassifier
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
-from imblearn.under_sampling import RandomUnderSampler
-from imblearn.over_sampling import RandomOverSampler, SMOTE
-from collections import Counter
-from scipy import interp
-import itertools
 %matplotlib inline
-
-
-import category_encoders as ce
-from boruta import BorutaPy
-
-
-
-import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
-
-from pycaret.classification import *
-
 print("Libraries successfully imported")
 
 
