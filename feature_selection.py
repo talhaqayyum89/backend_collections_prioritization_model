@@ -14,7 +14,6 @@ pd.set_option('display.float_format', lambda x: '%.3f' % x)
 plt.style.use('ggplot')
 %matplotlib inline
 color = sns.color_palette()
-%matplotlib inline
 warnings.filterwarnings("ignore", category=FutureWarning)
 print("Libraries successfully imported")
 
